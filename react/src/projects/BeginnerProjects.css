@@ -1,0 +1,602 @@
+.beginner-projects {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.project-tabs button {
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  color: #6b7280;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.project-tabs button:hover {
+  color: #3b82f6;
+}
+
+.project-tabs button.active {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+}
+
+.project-content {
+  padding: 1rem 0;
+}
+
+/* Project Container */
+.project-container {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-container h3 {
+  margin-top: 0;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Todo App Styles */
+.todo-app {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.todo-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.todo-input button {
+  padding: 0.75rem 1.5rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.todo-input button:hover {
+  background: #2563eb;
+}
+
+.todo-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.todo-filters button {
+  padding: 0.5rem 1rem;
+  background: #e5e7eb;
+  color: #374151;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.todo-filters button:hover {
+  background: #d1d5db;
+}
+
+.todo-filters button.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s;
+}
+
+.todo-list li:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list li.completed span {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.todo-list li input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #3b82f6;
+}
+
+.todo-list li span {
+  flex: 1;
+}
+
+.todo-list li button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: background-color 0.2s;
+}
+
+.todo-list li button:hover {
+  background: #dc2626;
+}
+
+/* Weather App Styles */
+.weather-app {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.weather-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.weather-input input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.weather-input button {
+  padding: 0.75rem 1.5rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.weather-input button:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.weather-input button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 0.75rem;
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.weather-display {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.weather-display h2 {
+  margin-top: 0;
+  color: #1f2937;
+  font-size: 2rem;
+}
+
+.weather-main {
+  margin: 1.5rem 0;
+}
+
+.temperature {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: #6b7280;
+  text-transform: capitalize;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.weather-details div {
+  background: #f9fafb;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+/* Portfolio Styles */
+.portfolio {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.portfolio-header h1 {
+  margin-top: 0;
+  color: #1f2937;
+  font-size: 2.5rem;
+}
+
+.portfolio-header p {
+  color: #6b7280;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.portfolio-nav button {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.portfolio-nav button:hover {
+  background: #f3f4f6;
+}
+
+.portfolio-nav button.active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.portfolio-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-section h2 {
+  margin-top: 0;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.skill-item {
+  background: #f3f4f6;
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  color: #374151;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #1f2937;
+}
+
+.project-card p {
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.project-tech {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tech-tag {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  color: #4b5563;
+}
+
+/* E-commerce Styles */
+.ecommerce {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ecommerce-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ecommerce-header h1 {
+  margin: 0;
+  color: #1f2937;
+}
+
+.cart-button {
+  padding: 0.75rem 1.5rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.cart-button:hover {
+  background: #2563eb;
+}
+
+.cart {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart h3 {
+  margin-top: 0;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.cart-item button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.cart-item button:hover {
+  background: #dc2626;
+}
+
+.cart-total {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 1rem;
+  color: #1f2937;
+}
+
+.product-price {
+  margin: 0 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.product-description {
+  margin: 0.5rem 1rem 1rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.add-to-cart {
+  width: calc(100% - 2rem);
+  margin: 0 1rem 1rem;
+  padding: 0.75rem;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.add-to-cart:hover {
+  background: #059669;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-tabs {
+    justify-content: center;
+  }
+  
+  .todo-input {
+    flex-direction: column;
+  }
+  
+  .weather-input {
+    flex-direction: column;
+  }
+  
+  .portfolio-nav {
+    flex-direction: column;
+  }
+  
+  .ecommerce-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .weather-main {
+    margin: 1rem 0;
+  }
+  
+  .temperature {
+    font-size: 3rem;
+  }
+}
+
+/* Common styles */
+.exercise {
+  background: #f0f9ff;
+  border-left: 4px solid #0ea5e9;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.exercise h4 {
+  margin-top: 0;
+  color: #0c4a6e;
+}
+
+.exercise ul {
+  margin-bottom: 0;
+  padding-left: 1.5rem;
+}
+
+.exercise li {
+  margin-bottom: 0.25rem;
+  color: #075985;
+}
+
+/* Animation for project switching */
+.project-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

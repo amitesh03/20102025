@@ -1,0 +1,17 @@
+EVM dApp Development Libraries
+Web3.js (JavaScript/EVM interaction)
+
+Ethers.js (lightweight JavaScript library)
+
+Hardhat (development environment and testing)
+
+Truffle (development and deployment framework)
+
+OpenZeppelin Contracts (security-audited smart contracts)
+
+Chainlink (oracle integrations)
+
+Drizzle (frontend library for dApps)
+
+Wagmi / RainbowKit (React hooks and UI for Ethereum)​
+

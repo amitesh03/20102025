@@ -1,0 +1,12 @@
+LangChain and LangGraph Ecosystem
+langchain-core (base package)
+
+langchain-openai, langchain-huggingface (LLM integrations)
+
+langchain-community (supporting packages)
+
+LangGraph platform (graph-first AI agent workflows)
+
+Maxim AI (tracing and observability for LangGraph agents)
+
+Other AI agent frameworks: CrewAI, OpenAI Agents, LlamaIndex, Microsoft AutoGen

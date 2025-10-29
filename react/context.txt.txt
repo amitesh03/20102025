@@ -1,0 +1,21 @@
+React Ecosystem Libraries
+React Router (navigation and routing)
+
+Redux Toolkit (state management)
+
+React Query (async data fetching and caching)
+
+React Hook Form (form handling)
+
+Styled Components / Emotion (CSS-in-JS styling)
+
+Tailwind CSS (utility-first CSS framework)
+
+Framer Motion (animations)
+
+Recoil / Zustand (alternative state management)
+
+React Testing Library / Jest (testing)
+
+MUI (Material-UI), Chakra UI, Ant Design (component libraries)​
+

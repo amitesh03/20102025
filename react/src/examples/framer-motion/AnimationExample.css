@@ -1,0 +1,374 @@
+.framer-motion-example {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.tab-navigation button {
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  color: #6b7280;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.tab-navigation button:hover {
+  color: #3b82f6;
+}
+
+.tab-navigation button.active {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+}
+
+.tab-content {
+  padding: 1rem 0;
+}
+
+/* Animation Example Styles */
+.animation-example {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.animation-example h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.animation-controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.animation-controls button {
+  padding: 0.5rem 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.animation-controls button:hover {
+  background: #2563eb;
+}
+
+/* Animation Boxes */
+.animation-box {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 8px;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.animation-box.small {
+  width: 50px;
+  height: 50px;
+  margin: 0.5rem;
+}
+
+.animation-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+/* Gesture Animations */
+.gesture-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.draggable-box {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: grab;
+  user-select: none;
+}
+
+.draggable-box:active {
+  cursor: grabbing;
+}
+
+.tap-box {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.gesture-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.swipe-box {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Variants Example */
+.variants-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.variant-item {
+  padding: 1rem;
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 80px;
+}
+
+/* Scroll Animations */
+.scroll-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.scroll-box {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.scroll-indicator {
+  text-align: center;
+  padding: 1rem;
+  background: #e0f2fe;
+  border-radius: 8px;
+  color: #0c4a6e;
+  margin-top: 2rem;
+}
+
+/* Layout Animations */
+.layout-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  min-height: 100px;
+  padding: 1rem;
+  background: #f3f4f6;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.layout-item {
+  padding: 1rem;
+  background: linear-gradient(135deg, #ec4899, #be185d);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 80px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Physics Animations */
+.physics-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.physics-box {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: grab;
+  user-select: none;
+  margin-bottom: 2rem;
+}
+
+.physics-box:active {
+  cursor: grabbing;
+}
+
+.physics-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.physics-controls button {
+  padding: 0.5rem 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.physics-controls button:hover {
+  background: #2563eb;
+}
+
+.physics-info {
+  text-align: center;
+  color: #4b5563;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Complex Animation */
+.complex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.complex-item {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 120px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tab-navigation {
+    justify-content: center;
+  }
+  
+  .animation-controls {
+    justify-content: center;
+  }
+  
+  .gesture-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .scroll-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .animation-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .gesture-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Animation performance optimizations */
+.animation-box,
+.draggable-box,
+.tap-box,
+.swipe-box,
+.variant-item,
+.layout-item,
+.physics-box,
+.complex-item {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Loading states */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #6b7280;
+}
+
+/* Error states */
+.error {
+  padding: 1rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #dc2626;
+  text-align: center;
+}

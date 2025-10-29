@@ -1,0 +1,18 @@
+Next.js Related Libraries and Tools
+React Query, SWR (data fetching)
+
+Zustand, Jotai (state management alternatives)
+
+NextAuth.js (authentication)
+
+Tailwind CSS, Shadcn UI, Chakra UI, Material UI, Ant Design (UI libraries)
+
+API Routes (backend in Next.js)
+
+Prisma, TypeORM (ORM/database tools)
+
+Vercel for deployment
+
+Next SEO (SEO optimization)
+
+Turborepo (monorepo management for Next.js projects)​

@@ -1,0 +1,212 @@
+.react-router-example {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.example-nav {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.example-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.example-nav li {
+  margin: 0;
+}
+
+.example-nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #4a5568;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.example-nav a:hover,
+.example-nav li.active a {
+  background: #3b82f6;
+  color: white;
+}
+
+.router-demo {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.route-content {
+  padding: 1rem;
+  min-height: 300px;
+  background: white;
+}
+
+.page {
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f9fafb;
+  margin-bottom: 1rem;
+}
+
+.page h2 {
+  margin-top: 0;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.page p {
+  color: #4b5563;
+}
+
+.nested-page {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f3f4f6;
+  border-radius: 6px;
+}
+
+.nested-page h3 {
+  margin-top: 0;
+  color: #374151;
+}
+
+.nested-page ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.nested-page li {
+  margin-bottom: 0.25rem;
+  color: #4b5563;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tabs a {
+  padding: 0.5rem 1rem;
+  color: #6b7280;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.tabs a:hover {
+  color: #3b82f6;
+}
+
+.tab-content {
+  padding: 1rem 0;
+  color: #4b5563;
+}
+
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.login-form div {
+  margin-bottom: 1rem;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.login-form button:hover {
+  background: #2563eb;
+}
+
+.product-nav {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.product-nav a {
+  padding: 0.5rem 1rem;
+  background: #e5e7eb;
+  color: #374151;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.product-nav a:hover {
+  background: #d1d5db;
+}
+
+.demo-toggle {
+  padding: 0.75rem 1.5rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+.demo-toggle:hover {
+  background: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .example-nav ul {
+    justify-content: center;
+  }
+  
+  .tabs {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .tabs a {
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 0;
+  }
+  
+  .product-nav {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "intermediate-hardhat-lesson",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hardhat project for EVM dApp development lessons",
+  "license": "MIT",
+  "scripts": {
+    "clean": "hardhat clean",
+    "compile": "hardhat compile",
+    "build": "hardhat compile",
+    "test": "hardhat test",
+    "node": "hardhat node",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:uups": "hardhat run scripts/deploy-uups.js --network localhost",
+    "upgrade:uups": "hardhat run scripts/upgrade-uups.js --network localhost",
+    "vrf:local": "hardhat run scripts/vrf-local-mock.js --network localhost",
+    "deploy:vrf": "hardhat run scripts/deploy-vrf.js --network sepolia"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "@openzeppelin/contracts": "^5.0.2",
+    "@chainlink/contracts": "^0.8.0"
+  },
+  "devDependencies": {
+    "hardhat": "^2.22.5",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/hardhat-upgrades": "^2.1.1"
+  }
+}

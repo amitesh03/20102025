@@ -1,0 +1,38 @@
+# Hugo Configuration Example
+# This file shows a basic Hugo site configuration
+
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'ananke'
+
+# Build settings
+[build]
+  writeStats = true
+
+# Parameters for the site
+[params]
+  description = "A simple Hugo site example"
+  author = "Your Name"
+
+# Language settings (for multilingual sites)
+[languages]
+  [languages.en]
+    weight = 1
+    title = "My Site"
+  [languages.es]
+    weight = 2
+    title = "Mi Sitio"
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 20

@@ -1,0 +1,17 @@
+{
+  "name": "module-9-performance-security-upgrades",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compute": "ts-node ts/compute_budget_demo.ts"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.95.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}

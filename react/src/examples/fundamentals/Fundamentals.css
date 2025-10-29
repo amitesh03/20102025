@@ -1,0 +1,133 @@
+.fundamentals {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.greeting {
+  background: #f0f9ff;
+  border-left: 4px solid #0ea5e9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.greeting h3 {
+  margin-top: 0;
+  color: #0c4a6e;
+}
+
+.greeting p {
+  margin-bottom: 0;
+  color: #075985;
+}
+
+.counter {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.counter h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.button-group button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-group button:hover {
+  background: #2563eb;
+}
+
+.timer {
+  background: #f0f9ff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.timer h3 {
+  margin-top: 0;
+  color: #0c4a6e;
+}
+
+.themed-component {
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.themed-component.light {
+  background: #f8fafc;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+.themed-component.dark {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+}
+
+.themed-component button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.themed-component button:hover {
+  background: #2563eb;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  width: 200px;
+}
+
+.demo-area > div {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.demo-area h4 {
+  margin-top: 0;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.demo-area p {
+  margin: 0.5rem 0;
+}
+
+.demo-area button {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}

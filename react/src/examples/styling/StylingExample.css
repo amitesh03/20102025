@@ -1,0 +1,250 @@
+.styling-example {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tab-navigation button {
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  color: #6b7280;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.tab-navigation button:hover {
+  color: #3b82f6;
+}
+
+.tab-navigation button.active {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+}
+
+.tab-content {
+  padding: 1rem 0;
+}
+
+/* Styled Components Example */
+.styled-example {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.styled-example label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Emotion Example */
+.emotion-example {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tailwind Example */
+.tailwind-example {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Common styles for all examples */
+.example-section {
+  margin-bottom: 2rem;
+}
+
+.example-section h3 {
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.code-block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  color: #334155;
+  white-space: pre-wrap;
+}
+
+.exercise {
+  background: #f0f9ff;
+  border-left: 4px solid #0ea5e9;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.exercise h4 {
+  margin-top: 0;
+  color: #0c4a6e;
+}
+
+.exercise ul {
+  margin-bottom: 0;
+  padding-left: 1.5rem;
+}
+
+.exercise li {
+  margin-bottom: 0.25rem;
+  color: #075985;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .tab-navigation {
+    flex-wrap: wrap;
+  }
+  
+  .code-block {
+    font-size: 0.75rem;
+  }
+}
+
+/* Additional utility classes for demonstration */
+.utility-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.utility-card {
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.utility-card.primary {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.utility-card.secondary {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.utility-card.accent {
+  background-color: #fed7aa;
+  color: #92400e;
+}
+
+/* Animation demo */
+.animation-demo {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.animation-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: #3b82f6;
+}
+
+/* Theme demo */
+.theme-demo {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.theme-card {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.theme-card.light {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #e5e7eb;
+}
+
+.theme-card.dark {
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+/* Component composition demo */
+.composition-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.composition-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background-color: #f9fafb;
+}
+
+.composition-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #6b7280;
+}
+
+.composition-content {
+  flex: 1;
+}
+
+.composition-title {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.composition-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+}

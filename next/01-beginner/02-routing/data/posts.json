@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "getting-started-with-nextjs",
+    "title": "Getting Started with Next.js",
+    "excerpt": "Learn the basics of Next.js and how to build your first application.",
+    "content": "Next.js is a React framework for building full-stack web applications. In this post, we'll cover the fundamentals of Next.js including routing, data fetching, and deployment.",
+    "author": "John Doe",
+    "publishedAt": "2023-10-01"
+  },
+  {
+    "slug": "understanding-react-components",
+    "title": "Understanding React Components",
+    "excerpt": "Deep dive into React components and how they work in Next.js applications.",
+    "content": "React components are the building blocks of modern web applications. In this post, we'll explore functional components, hooks, and how they integrate with Next.js.",
+    "author": "Jane Smith",
+    "publishedAt": "2023-10-15"
+  },
+  {
+    "slug": "styling-in-nextjs",
+    "title": "Styling in Next.js",
+    "excerpt": "Explore different styling approaches in Next.js including CSS Modules, Tailwind CSS, and more.",
+    "content": "Styling is an important part of any web application. Next.js provides multiple ways to style your components, from traditional CSS to modern utility-first frameworks.",
+    "author": "Mike Johnson",
+    "publishedAt": "2023-10-20"
+  },
+  {
+    "slug": "optimizing-performance",
+    "title": "Optimizing Performance in Next.js",
+    "excerpt": "Learn techniques to optimize your Next.js application for better performance.",
+    "content": "Performance is crucial for user experience. In this post, we'll cover code splitting, image optimization, and other performance optimization techniques in Next.js.",
+    "author": "Sarah Williams",
+    "publishedAt": "2023-10-25"
+  }
+]

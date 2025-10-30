@@ -1,0 +1,701 @@
+{
+  "semi": false,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "quoteProps": "as-needed",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "embeddedLanguageFormatting": "auto",
+  "insertPragma": false,
+  "proseWrap": "preserve",
+  "requirePragma": false,
+  "htmlWhitespaceSensitivity": "css",
+  "vueIndentScriptAndStyle": false,
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "printWidth": 80,
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 80,
+        "proseWrap": "always"
+      }
+    },
+    {
+      "files": "*.yml",
+      "options": {
+        "tabWidth": 2,
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.yaml",
+      "options": {
+        "tabWidth": 2,
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.tsx",
+      "options": {
+        "jsxSingleQuote": true,
+        "jsxBracketSameLine": false
+      }
+    },
+    {
+      "files": "*.jsx",
+      "options": {
+        "jsxSingleQuote": true,
+        "jsxBracketSameLine": false
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "htmlWhitespaceSensitivity": "ignore",
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.css",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.scss",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.less",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.vue",
+      "options": {
+        "singleQuote": true,
+        "vueIndentScriptAndStyle": false
+      }
+    },
+    {
+      "files": "*.svelte",
+      "options": {
+        "singleQuote": true
+      }
+    },
+    {
+      "files": "*.graphql",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.gql",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.toml",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.ini",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.properties",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.env",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.env.example",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.env.local",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.env.development",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.env.production",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.env.test",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.dockerfile",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "Dockerfile",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.dockerignore",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.gitignore",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.eslintignore",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.prettierignore",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.editorconfig",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.babelrc",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.babelrc.js",
+      "options": {
+        "singleQuote": true
+      }
+    },
+    {
+      "files": "*.babelrc.json",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "babel.config.js",
+      "options": {
+        "singleQuote": true
+      }
+    },
+    {
+      "files": "babel.config.json",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.tsconfig.json",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "tsconfig.json",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "tsconfig.*.json",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.js.map",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.css.map",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.min.js",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.min.css",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.bundle.js",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.bundle.css",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.lock",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "package-lock.json",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "yarn.lock",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "pnpm-lock.yaml",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.log",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.txt",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.csv",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.tsv",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.xml",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.svg",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.ico",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.png",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.jpg",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.jpeg",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.gif",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.bmp",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.webp",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.avif",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.tiff",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.tif",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.psd",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.ai",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.sketch",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.fig",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.xd",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.pdf",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.doc",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.docx",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.xls",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.xlsx",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.ppt",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.pptx",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.odt",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.ods",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.odp",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.pages",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.numbers",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.key",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.mp3",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.mp4",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.avi",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.mov",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.wmv",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.flv",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.webm",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.mkv",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.zip",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.rar",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.7z",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.tar",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.gz",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.bz2",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.xz",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.exe",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.msi",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.dmg",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.pkg",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.deb",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.rpm",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.apk",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.ipa",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.bin",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.iso",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.img",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.vhd",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.vmdk",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.ova",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.ovf",
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}

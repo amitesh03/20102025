@@ -1,0 +1,274 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  username      String    @unique
+  passwordHash  String    @map("password_hash")
+  firstName     String?   @map("first_name")
+  lastName      String?   @map("last_name")
+  bio           String?
+  avatarUrl     String?   @map("avatar_url")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+  isActive      Boolean   @default(true) @map("is_active")
+  emailVerified Boolean   @default(false) @map("email_verified")
+
+  // Relations
+  posts         Post[]
+  comments      Comment[]
+  likes         Like[]
+  subscriptions Subscription[]
+
+  @@map("users")
+}
+
+// Category model
+model Category {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String?
+  slug        String   @unique
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  // Relations
+  posts Post[]
+
+  @@map("categories")
+}
+
+// Tag model
+model Tag {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+
+  // Relations
+  posts PostTag[]
+
+  @@map("tags")
+}
+
+// Post model
+model Post {
+  id              String    @id @default(cuid())
+  title           String
+  slug            String    @unique
+  content         String
+  excerpt         String?
+  featuredImageUrl String?   @map("featured_image_url")
+  status          PostStatus @default(DRAFT)
+  publishedAt     DateTime? @map("published_at")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+  viewCount       Int       @default(0) @map("view_count")
+  likeCount       Int       @default(0) @map("like_count")
+
+  // Foreign keys
+  authorId    String @map("author_id")
+  categoryId  String? @map("category_id")
+
+  // Relations
+  author    User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  category  Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  comments  Comment[]
+  likes     Like[]
+  tags      PostTag[]
+
+  @@map("posts")
+}
+
+// PostTag junction model
+model PostTag {
+  postId String @map("post_id")
+  tagId  String @map("tag_id")
+
+  // Relations
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag  Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@map("post_tags")
+}
+
+// Comment model
+model Comment {
+  id             String    @id @default(cuid())
+  content        String
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  isApproved     Boolean   @default(true) @map("is_approved")
+
+  // Foreign keys
+  postId         String @map("post_id")
+  authorId       String @map("author_id")
+  parentCommentId String? @map("parent_comment_id")
+
+  // Relations
+  post         Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  author       User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  parentComment Comment? @relation("CommentReplies", fields: [parentCommentId], references: [id], onDelete: Cascade)
+  replies      Comment[] @relation("CommentReplies")
+
+  @@map("comments")
+}
+
+// Like model
+model Like {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now()) @map("created_at")
+
+  // Foreign keys
+  postId String @map("post_id")
+  userId String @map("user_id")
+
+  // Relations
+  post User @relation(fields: [postId], references: [id], onDelete: Cascade)
+  user Post @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([postId, userId])
+  @@map("likes")
+}
+
+// Subscription model
+model Subscription {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  isActive      Boolean   @default(true) @map("is_active")
+  subscribedAt   DateTime  @default(now()) @map("subscribed_at")
+  unsubscribedAt DateTime? @map("unsubscribed_at")
+
+  // Relations
+  user User? @relation(fields: [email], references: [email], onDelete: Cascade)
+
+  @@map("subscriptions")
+}
+
+// Enums
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+// View for published posts with author info
+view PublishedPostView {
+  id              String
+  title           String
+  slug            String
+  excerpt         String?
+  featuredImageUrl String?
+  publishedAt     DateTime
+  viewCount       Int
+  likeCount       Int
+  authorId        String
+  authorUsername  String
+  authorFirstName String?
+  authorLastName  String?
+  authorAvatarUrl String?
+  categoryId      String?
+  categoryName    String?
+  categorySlug    String?
+}
+
+// Full-text search index
+model PostSearchIndex {
+  id    String @id @default(cuid())
+  postId String @unique @map("post_id")
+  title String
+  content String
+  searchVector String @map("search_vector")
+
+  @@map("post_search_index")
+}
+
+// Analytics model
+model PageView {
+  id        String   @id @default(cuid())
+  path      String
+  userAgent String?  @map("user_agent")
+  ipAddress String?  @map("ip_address")
+  userId    String?  @map("user_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("page_views")
+}
+
+// Session model for authentication
+model Session {
+  id           String   @id @default(cuid())
+  token        String   @unique
+  userId       String   @map("user_id")
+  expiresAt    DateTime @map("expires_at")
+  createdAt    DateTime @default(now()) @map("created_at")
+  lastAccessed DateTime @default(now()) @map("last_accessed")
+
+  @@map("sessions")
+}
+
+// Notification model
+model Notification {
+  id        String           @id @default(cuid())
+  title     String
+  message   String
+  type      NotificationType
+  isRead    Boolean          @default(false) @map("is_read")
+  createdAt DateTime         @default(now()) @map("created_at")
+  readAt    DateTime?        @map("read_at")
+
+  // Foreign key
+  userId String @map("user_id")
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}
+
+enum NotificationType {
+  INFO
+  SUCCESS
+  WARNING
+  ERROR
+  COMMENT
+  LIKE
+  FOLLOW
+}
+
+// File upload model
+model FileUpload {
+  id           String     @id @default(cuid())
+  filename     String
+  originalName String     @map("original_name")
+  mimeType     String     @map("mime_type")
+  size         Int
+  path         String
+  url          String?
+  createdAt    DateTime   @default(now()) @map("created_at")
+  uploadedBy   String?    @map("uploaded_by")
+
+  @@map("file_uploads")
+}
+
+// Settings model
+model Setting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value Json
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("settings")
+}

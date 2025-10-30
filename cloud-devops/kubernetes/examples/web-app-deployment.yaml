@@ -1,0 +1,201 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+  labels:
+    app: web-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: web-app
+        image: nginx:1.21-alpine
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: web-app-config
+              key: api-url
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: web-app-secrets
+              key: db-password
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/config
+        - name: cache-volume
+          mountPath: /var/cache
+      volumes:
+      - name: config-volume
+        configMap:
+          name: web-app-config
+      - name: cache-volume
+        emptyDir: {}
+      imagePullSecrets:
+      - name: registry-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app-service
+spec:
+  selector:
+    app: web-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: ClusterIP
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-app-config
+data:
+  api-url: "https://api.example.com"
+  log-level: "info"
+  feature-flags: |
+    {
+      "newDashboard": true,
+      "betaFeatures": false
+    }
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: web-app-secrets
+type: Opaque
+data:
+  db-password: cGFzc3dvcmQ=  # base64 encoded 'password'
+  api-key: YXBpa2V5XzEyMzQ=  # base64 encoded 'apikey:1234'
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-app-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+    - example.com
+    secretName: web-app-tls
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web-app-service
+            port:
+              number: 80
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: web-app-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: web-app
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: web-app-pdb
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: web-app
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: web-app-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: web-app-backup
+spec:
+  schedule: "0 2 * * *"  # Run daily at 2 AM
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: backup
+            image: backup-tool:latest
+            command:
+            - /bin/sh
+            - -c
+            - |
+              echo "Starting backup process..."
+              # Backup logic here
+              echo "Backup completed"
+            env:
+            - name: BACKUP_URL
+              valueFrom:
+                secretKeyRef:
+                  name: backup-secrets
+                  key: backup-url
+          restartPolicy: OnFailure

@@ -1,0 +1,173 @@
+# GraphQL Schema Example
+
+# User type
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  firstName: String!
+  lastName: String!
+  avatar: String
+  bio: String
+  posts: [Post!]!
+  comments: [Comment!]!
+  createdAt: String!
+  updatedAt: String!
+}
+
+# Post type
+type Post {
+  id: ID!
+  title: String!
+  content: String!
+  excerpt: String
+  author: User!
+  comments: [Comment!]!
+  tags: [String!]!
+  published: Boolean!
+  createdAt: String!
+  updatedAt: String!
+}
+
+# Comment type
+type Comment {
+  id: ID!
+  content: String!
+  author: User!
+  post: Post!
+  parentComment: Comment
+  replies: [Comment!]!
+  createdAt: String!
+  updatedAt: String!
+}
+
+# Auth payload
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+# Query type
+type Query {
+  # User queries
+  me: User
+  user(id: ID!): User
+  users(limit: Int, offset: Int): [User!]!
+  
+  # Post queries
+  posts(limit: Int, offset: Int, published: Boolean): [Post!]!
+  post(id: ID!): Post
+  postsByAuthor(authorId: ID!, limit: Int, offset: Int): [Post!]!
+  postsByTag(tag: String!, limit: Int, offset: Int): [Post!]!
+  searchPosts(query: String!, limit: Int, offset: Int): [Post!]!
+  
+  # Comment queries
+  comments(postId: ID!, limit: Int, offset: Int): [Comment!]!
+  comment(id: ID!): Comment
+  
+  # Stats
+  stats: Stats!
+}
+
+# Mutation type
+type Mutation {
+  # Auth mutations
+  register(username: String!, email: String!, password: String!, firstName: String!, lastName: String!): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+  refreshToken: AuthPayload!
+  
+  # User mutations
+  updateProfile(firstName: String, lastName: String, bio: String, avatar: String): User!
+  changePassword(oldPassword: String!, newPassword: String!): Boolean!
+  
+  # Post mutations
+  createPost(title: String!, content: String!, excerpt: String, tags: [String!], published: Boolean): Post!
+  updatePost(id: ID!, title: String, content: String, excerpt: String, tags: [String], published: Boolean): Post!
+  deletePost(id: ID!): Boolean!
+  publishPost(id: ID!): Post!
+  unpublishPost(id: ID!): Post!
+  
+  # Comment mutations
+  createComment(postId: ID!, content: String!, parentCommentId: ID): Comment!
+  updateComment(id: ID!, content: String!): Comment!
+  deleteComment(id: ID!): Boolean!
+}
+
+# Subscription type
+type Subscription {
+  # Post subscriptions
+  postCreated: Post!
+  postUpdated: Post!
+  postDeleted: ID!
+  
+  # Comment subscriptions
+  commentCreated(postId: ID!): Comment!
+  commentUpdated: Comment!
+  commentDeleted: ID!
+  
+  # User subscriptions
+  userUpdated: User!
+}
+
+# Stats type
+type Stats {
+  totalUsers: Int!
+  totalPosts: Int!
+  totalComments: Int!
+  publishedPosts: Int!
+  draftPosts: Int!
+}
+
+# Input types
+input PostInput {
+  title: String!
+  content: String!
+  excerpt: String
+  tags: [String!]
+  published: Boolean
+}
+
+input CommentInput {
+  postId: ID!
+  content: String!
+  parentCommentId: ID
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  password: String!
+  firstName: String!
+  lastName: String!
+}
+
+input UpdateUserInput {
+  firstName: String
+  lastName: String
+  bio: String
+  avatar: String
+}
+
+# Enums
+enum SortOrder {
+  ASC
+  DESC
+}
+
+enum PostSortField {
+  CREATED_AT
+  UPDATED_AT
+  TITLE
+}
+
+enum UserSortField {
+  CREATED_AT
+  USERNAME
+  FIRST_NAME
+  LAST_NAME
+}
+
+# Custom scalars
+scalar Date
+scalar DateTime
+scalar Upload
